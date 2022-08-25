@@ -11,8 +11,12 @@ const BkList = () => {
   const bkList = useSelector((state) => state.bkList?.bkList);
   // per total list and pageoffset (set by paginate), render list.
   const pageOffset = useSelector((state) => state.pageOffset?.pageOffset);
-  const renderList = bkList.slice(pageOffset, itemsPerPage);
+  const firstRenderIndex = pageOffset*itemsPerPage;
+  const lastRenderIndex =pageOffset*itemsPerPage+itemsPerPage;
+  const renderList = bkList.slice(firstRenderIndex, lastRenderIndex);
+
   // click remove button, delete bookmark from redux.
+
   const handleBkDelete = (id) => {
     dispatch(removeBookmark());
   };

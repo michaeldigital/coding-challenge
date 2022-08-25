@@ -1,3 +1,4 @@
+import {useEffect} from "react"
 import ReactPaginate from "react-paginate";
 import { useSelector, useDispatch } from "react-redux";
 import { itemsPerPage } from "../../const";
@@ -10,6 +11,12 @@ const Paginate = () => {
   const handlePageClick = (selectObj) => {
     dispatch(updatePageOffset(selectObj.selected));
   };
+// initial render, clear existing offset value in redux if any. 
+  useEffect(()=>{
+    dispatch(updatePageOffset(0));
+  },[])
+
+  
 
   const bkList = useSelector((state) => state.bkList?.bkList);
 
