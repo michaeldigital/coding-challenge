@@ -12,7 +12,7 @@ This app is using prettier for formatting. Run "npm run format" to format the co
 
 ## Code standard
 
-This app is following best practise of React in terms of code standard, such as component naming. As Google standard conflicts with React, so Google standand is not followed in this regards. 
+This app is following best practise of React in terms of code standard, such as component naming. As Google standard conflicts with React, so Google standand is not followed in this regards.
 
 ## Style
 
@@ -22,7 +22,7 @@ For bootstrap utilities: https://getbootstrap.com/docs/5.2/utilities/background/
 
 ## Api route
 
-To verify if a url exists, this app uses nextjs api route to create back end code, and trigger axios api call. 
+To verify if a url exists, this app uses nextjs api route to create back end code, and trigger axios api call.
 
 For nextjs utilities: https://nextjs.org/docs/api-routes/introduction
 
@@ -35,4 +35,3 @@ Due to time limit, e2e testing has not been set up. Uni testing not covers enoug
 ## Limitation
 
 Due to time limit, CSS is not perfect, and unit testing has not covered enough codes.
-
