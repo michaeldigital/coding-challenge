@@ -18,7 +18,7 @@ const BkList = () => {
   // click remove button, delete bookmark from redux.
 
   const handleBkDelete = (id) => {
-    dispatch(removeBookmark());
+    dispatch(removeBookmark(id));
   };
   // click edit button, update edit bookmark data in redux.
   const handleBkEdit = (bk) => {
