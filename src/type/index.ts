@@ -1,4 +1,4 @@
-export interface Account{
+export interface IAccount{
     system_account: string;
     value_type: "debit"|"credit";
     total_value: number;
@@ -11,3 +11,5 @@ export interface Account{
     account_identifier: string,
     account_name: string
 }
+
+export type CalcType = "revenue"|"expense"|"sales"|"assets"|"liabilities"
