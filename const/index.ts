@@ -1,0 +1,1 @@
+export const apiPath = process.env.API_PATH_ACCOUNT_DATA

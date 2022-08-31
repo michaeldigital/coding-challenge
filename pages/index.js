@@ -4,8 +4,26 @@ import BkList from "../src/components/listViewPage/BkList";
 import PageContainer from "../src/components/common/PageContainer";
 import EditBkModal from "../src/components/listViewPage/EditBkModal";
 import Paginate from "../src/components/listViewPage/Paginate";
+import {useEffect,  useState} from "react"
 
 export default function Home() {
+
+const [data, setData] = useState("")
+  useEffect(()=>{
+
+    fetch("https://raw.githubusercontent.com/9spokes/coding-challenge/master/data.json").then(
+  response=>console.log(response.json())
+    )
+
+    // useEffect(() => {
+    //   fetch("https://dog.ceo/api/breeds/image/random")
+    //   .then(response => response.json())
+    //       // 4. Setting *dogImage* to the image url that we received from the response above
+    //   .then(data => setDogImage(data.message))
+    // },[])
+
+
+  }, [])
   return (
     <PageContainer>
       <Head>
