@@ -1,37 +1,95 @@
-## Project
+# 9Spokes Coding Challenge
 
-This small project is to create a bookmark manager. User may create bookmark, update, delete.
+## Overview
 
-## Tech stack
+This repo contains the instructions and the data you need to complete the _9Spokes coding challenge_.  This challenge is not intended to be complex, but it is an opportunity for you to showcase your understanding and applying of good development practices.
 
-This app is using nextjs, java script, bookstrap, redux, jest, react-testig-library.
+You are encouraged to treat this as a real-life project.  This typically means:
 
-## Format
+- Use version control effectively
+- Include some basic documentation
+- Include some unit tests
+- Use a naming convention
 
-This app is using prettier for formatting. Run "npm run format" to format the codes.
+You are free to use any programming language you'd like.
 
-## Code standard
+## The Challenge
 
-This app is following best practise of React in terms of code standard, such as component naming. As Google standard conflicts with React, so Google standand is not followed in this regards.
+You are tasked with developing an application that performs the following tasks in sequence:
 
-## Style
+- Read and parse an external data file `data.json` (located in this repo)
+- Using this data, calculate and print the values of 5 common accounting metrics:
+  1. Revenue
+  2. Expenses
+  3. Gross Profit Margin
+  4. Net Profit Margin
+  5. Working Capital Ratio
+- Commit your changes, and upload all your work to a feature branch of your choice.
 
-This app is mainly using bootstrap utilities (v.5.2) and react bootstrap modules for styling. Whenever bookstrap utilities is not enough, this app uses styled component.
+## Instructions
 
-For bootstrap utilities: https://getbootstrap.com/docs/5.2/utilities/background/
+- Begin by _forking_ the current repository to your own `github.com` account
+- Clone the repo locally
+- Write your code, commit often
+- Once you are satisfied with the output, push your changes to your `github.com` account
+- Share the link
 
-## Api route
+## Calculations
 
-To verify if a url exists, this app uses nextjs api route to create back end code, and trigger axios api call.
+Use the formulas below to calculate your values:
 
-For nextjs utilities: https://nextjs.org/docs/api-routes/introduction
+### Revenue
 
-## Testing
+This should be calculated by adding up all the values under `total_value` where the `account_category` field is set to `revenue`
 
-This app uses jest and react testing library for unit testing. Run "npm run test" to run unit testing.
+### Expenses
 
-Due to time limit, e2e testing has not been set up. Uni testing not covers enough logics.
+This should be calculated by adding up all the values under `total_value` where the `account_category` field is set to `expense`
 
-## Limitation
+### Gross Profit Margin
 
-Due to time limit, CSS is not perfect, and unit testing has not covered enough codes.
+This is calculated in two steps: first by adding all the `total_value` fields where the `account_type` is set to `sales` and the `value_type` is set to `debit`; then dividing that by the `revenue` value calculated earlier to generate a percentage value.
+
+### Net Profit Margin
+
+This metric is calculated by subtracting the `expenses` value from the `revenue` value and dividing the remainder by `revenue` to calculate a percentage.
+
+### Working Capital Ratio
+
+This is calculated dividing the `assets` by the `liabilities` creating a percentage value where `assets` are calculated by:
+
+- adding the `total_value` from all records where the `account_category` is set to `assets`, the `value_type` is set to `debit`, and the `account_type` is one of `current`, `bank`, or `current_accounts_receivable`
+- subtracting the `total_value` from all records where the `account_category` is set to `assets`, the `value_type` is set to `credit`, and the `account_type` is one of `current`, `bank`, or `current_accounts_receivable`
+
+and liabilities are calculated by:
+
+- adding the `total_value` from all records where the `account_category` is set to `liability`, the `value_type` is set to `credit`, and the `account_type` is one of `current` or `current_accounts_payable`
+- subtracting the `total_value` from all records where the `account_category` is set to `liability`, the `value_type` is set to `debit`, and the `account_type` is one `current` or `current_accounts_payable`
+
+## Formatting
+
+All currency figures must be formatted as follows:
+- The value is prefixed with a `$` sign
+- A comma is used to separate every 3 digits in the thousands, millions, billions, and trillions
+- Cents are removed
+
+All percentage values must be formatted to one decimal digit and be prefixed with a `%` sign.  Don't forget to multiply by 100 each time you're tasked with calculating a percentage value.
+
+## Example
+
+Below is what a typical output should look like.  Please note this is *not* the output of the challenge but a mere example.
+
+```
+$ ./myChallenge
+Revenue: $519,169
+Expenses: $411,664
+Gross Profit Margin: 22%
+Net Profit Margin: 21%
+Working Capital Ratio: 95%
+```
+
+# Dependencies
+
+If your program requires a special way to compile or a specific version of a toolset, please be sure to include that in your running instructions.
+
+__Thank you and good luck!__
