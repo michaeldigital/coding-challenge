@@ -1,9 +1,10 @@
 import "../styles/globals.css";
-import ReduxProvider from "../src/components/common/ReduxProvider";
+import ReduxProvider from "../components/common/ReduxProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   // To fix the error about server does not match client, which happens after upgrade to React 18.
   const [showChild, setShowChild] = useState(false);
   useEffect(() => {

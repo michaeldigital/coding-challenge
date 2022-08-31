@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Account} from "type";
+import {Account} from "src/type";
 
 export const get = async(url:string):Promise<Account[]> =>{
 

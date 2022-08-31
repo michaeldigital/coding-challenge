@@ -1,7 +1,7 @@
-import {get} from "services/api";
+import {get} from "src/services/api";
 import axios from "axios";
-import {testingAccountData} from "testingData";
-import {apiPath} from "const"
+import {testingAccountData} from "src/testingData";
+import {apiPath} from "src/const"
 
 jest.mock("axios");
 const mockAxiosGet = axios.get as jest.MockedFn<typeof axios.get>;

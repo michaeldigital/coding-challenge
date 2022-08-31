@@ -1,14 +1,15 @@
 import Head from "next/head";
-import AddBkFrom from "../src/components/listViewPage/AddBkForm";
-import BkList from "../src/components/listViewPage/BkList";
-import PageContainer from "../src/components/common/PageContainer";
-import EditBkModal from "../src/components/listViewPage/EditBkModal";
-import Paginate from "../src/components/listViewPage/Paginate";
+import AddBkFrom from "../components/listViewPage/AddBkForm";
+import BkList from "../components/listViewPage/BkList";
+import PageContainer from "../components/common/PageContainer";
+import EditBkModal from "../components/listViewPage/EditBkModal";
+import Paginate from "../components/listViewPage/Paginate";
 import {useEffect,  useState} from "react"
 
 export default function Home() {
 
 const [data, setData] = useState("")
+
   useEffect(()=>{
 
     fetch("https://raw.githubusercontent.com/9spokes/coding-challenge/master/data.json").then(
