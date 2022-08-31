@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import ReduxProvider from "../components/common/ReduxProvider";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { AppProps } from "next/app";
@@ -19,9 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <></>;
   }
   return (
-    <ReduxProvider>
+
       <Component {...pageProps} />
-    </ReduxProvider>
+
   );
 }
 

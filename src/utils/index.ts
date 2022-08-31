@@ -4,13 +4,15 @@ export const sumArrayNumber = (arr: number[]) => {
   return arr.reduce((a, b) => a + b, 0);
 };
 
-export const calcPercRate = (substractValue: number, baseValue: number) => {
-  const rate = Math.round(((baseValue - substractValue) / baseValue) * 100);
+export const formatNumberWithPerc = (num:number) => {
+  const rate = Math.round(num * 100);
   return `${rate}%`;
 };
 
 export const formatNumberWithComma = (num: number) => {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const numWithoutCents = Math.round(num)
+  const commaFormatData =numWithoutCents.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return `$${commaFormatData}`
 };
 
 export const calcRevenue = (accountsData: IAccount[]) =>{

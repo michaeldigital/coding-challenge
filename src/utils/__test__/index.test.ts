@@ -1,4 +1,4 @@
-import {sumArrayNumber, calcPercRate, formatNumberWithComma, calcRevenue, calcExpense, calcAssets, calcLiabilities, calcSales} from "../";
+import {sumArrayNumber, formatNumberWithPerc, formatNumberWithComma, calcRevenue, calcExpense, calcAssets, calcLiabilities, calcSales} from "../";
 import {testingAccountData} from "src/testingData"
 import {IAccount} from "src/type"
 
@@ -10,7 +10,7 @@ it("sum function works - add array number", ()=>{
 })
 
 it("calPercRate function works - calculate change rate in percentage", ()=>{
-    const rateInPercentage = calcPercRate(411664, 519169)
+    const rateInPercentage = formatNumberWithPerc(0.213)
     expect(rateInPercentage).toBe("21%")
 })
 
@@ -18,11 +18,15 @@ it("formatNumberWithComma function works - format data with comma", ()=>{
 
     const num1 = 123456;
     const formatStr1 = formatNumberWithComma(num1);
-    expect(formatStr1).toBe("123,456")
+    expect(formatStr1).toBe("$123,456")
 
     const num2 = 123456.333;
     const formatStr2 = formatNumberWithComma(num2);
-    expect(formatStr2).toBe("123,456.333")
+    expect(formatStr2).toBe("$123,456")
+
+    const num3 = 123456.533;
+    const formatStr3 = formatNumberWithComma(num3);
+    expect(formatStr3).toBe("$123,457")
 })
 
 it("calcRevenue function works = calculate total revenue", ()=>{

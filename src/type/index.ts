@@ -12,4 +12,3 @@ export interface IAccount{
     account_name: string
 }
 
-export type CalcType = "revenue"|"expense"|"sales"|"assets"|"liabilities"

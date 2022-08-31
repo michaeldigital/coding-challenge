@@ -1,7 +1,7 @@
 import axios from "axios";
-import {Account} from "src/type";
+import {IAccount} from "src/type";
 
-export const get = async(url:string):Promise<Account[]> =>{
+export const get = async(url:string):Promise<IAccount[]> =>{
 
     try {
         const response = await axios.get(url);
