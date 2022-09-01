@@ -13,20 +13,18 @@ import {
   calcSales,
   formatNumberWithComma,
 } from "src/utils";
-import styled from "styled-components"
+import styled from "styled-components";
 
 export default function Home() {
-
   const [revenue, setRevenue] = useState(0);
   const [expense, setExpense] = useState(0);
   const [workingCapitalRatio, setWorkingCapitalRatio] = useState(0);
   const [grossProfitMargin, setGrossProfitMargin] = useState(0);
   const [netProfitMargin, setNetProfitMargin] = useState(0);
-  const [showTable, setShowTable] = useState(false)
+  const [showTable, setShowTable] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-
       // fetch external json data
       const accountList = await get(apiPath as string);
 
@@ -55,9 +53,9 @@ export default function Home() {
     fetchData();
   }, []);
 
-  const handleClick = () =>{
-    setShowTable(true)
-  }
+  const handleClick = () => {
+    setShowTable(true);
+  };
   return (
     <PageContainer>
       <Head>
@@ -68,35 +66,38 @@ export default function Home() {
 
       <Main>
         <h1>Account Calculator</h1>
-        <div>Please click the button below, and see the values after calcuation.</div>
-        <Button onClick={handleClick} disabled={showTable}>Print values</Button>
+        <div>
+          Please click the button below, and see the values after calcuation.
+        </div>
+        <Button onClick={handleClick} disabled={showTable}>
+          Print values
+        </Button>
 
-        {showTable&&<TableValue 
-        revenue={revenue} 
-        expense={expense} 
-        netProfitMargin={netProfitMargin}
-        grossProfitMargin={grossProfitMargin}
-        workingCapitalRatio={workingCapitalRatio}
-        />}
-        
-   
-     
-     
+        {showTable && (
+          <TableValue
+            revenue={revenue}
+            expense={expense}
+            netProfitMargin={netProfitMargin}
+            grossProfitMargin={grossProfitMargin}
+            workingCapitalRatio={workingCapitalRatio}
+          />
+        )}
       </Main>
     </PageContainer>
   );
 }
 
-
 const PageContainer = styled.div`
-width:40rem;
-max-width: 90%;
-margin:auto;
-padding:3rem  0rem;
-`
+  width: 40rem;
+  max-width: 90%;
+  margin: auto;
+  padding: 3rem 0rem;
+`;
 const Main = styled.main`
- & > h1, table, button, div{
-  margin-top:1.5rem;
-}
-
-`
+  & > h1,
+  table,
+  button,
+  div {
+    margin-top: 1.5rem;
+  }
+`;

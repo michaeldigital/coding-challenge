@@ -1,8 +1,5 @@
 import Table from "react-bootstrap/Table";
-import {
-    formatNumberWithPerc,
-    formatNumberWithComma,
-  } from "src/utils";
+import { formatNumberWithPerc, formatNumberWithComma } from "src/utils";
 
 interface ITableValueProps {
   revenue: number;
@@ -12,28 +9,23 @@ interface ITableValueProps {
   workingCapitalRatio: number;
 }
 
-
-export default function TableValue ({
+export default function TableValue({
   revenue,
   expense,
   grossProfitMargin,
   netProfitMargin,
   workingCapitalRatio,
 }: ITableValueProps) {
+  // if value is 0, just render 0 without formatting
 
-    // if value is 0, just render 0 without formatting
-
-    const formattedRevenue = revenue!==0? formatNumberWithComma(revenue):0;
-    const formattedExpense = expense!==0? formatNumberWithComma(expense):0;
-    const formattedGrossProfitMargin = grossProfitMargin!==0? formatNumberWithPerc(
-        grossProfitMargin
-    ):0;
-    const formattedNetProfitMargin = netProfitMargin!==0? formatNumberWithPerc(
-        netProfitMargin
-    ):0;
-    const formattedWorkingCapitalRatio = workingCapitalRatio!==0? formatNumberWithPerc(
-        workingCapitalRatio
-    ):0;
+  const formattedRevenue = revenue !== 0 ? formatNumberWithComma(revenue) : 0;
+  const formattedExpense = expense !== 0 ? formatNumberWithComma(expense) : 0;
+  const formattedGrossProfitMargin =
+    grossProfitMargin !== 0 ? formatNumberWithPerc(grossProfitMargin) : 0;
+  const formattedNetProfitMargin =
+    netProfitMargin !== 0 ? formatNumberWithPerc(netProfitMargin) : 0;
+  const formattedWorkingCapitalRatio =
+    workingCapitalRatio !== 0 ? formatNumberWithPerc(workingCapitalRatio) : 0;
   return (
     <Table striped bordered responsive="sm">
       <thead>
@@ -68,5 +60,4 @@ export default function TableValue ({
       </tbody>
     </Table>
   );
-};
-
+}

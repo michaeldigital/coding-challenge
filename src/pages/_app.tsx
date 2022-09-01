@@ -18,11 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (typeof window === "undefined") {
     return <></>;
   }
-  return (
-
-      <Component {...pageProps} />
-
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
