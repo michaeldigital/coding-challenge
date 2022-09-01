@@ -30,28 +30,28 @@ it("formatNumberWithComma function works - format data with comma", ()=>{
 })
 
 it("calcRevenue function works = calculate total revenue", ()=>{
-    const totalRevenueInNumber = calcRevenue(testingAccountData.data as IAccount[])
-    expect(totalRevenueInNumber).toBe(32431)
+    const total = calcRevenue(testingAccountData.data as IAccount[])
+    expect(total).toBe(32431)
 })
 
 it("calcExpense function works = calculate total expense", ()=>{
-    const totalRevenueInNumber = calcExpense(testingAccountData.data as IAccount[])
-    expect(totalRevenueInNumber).toBe(36529.68)
+    const total = calcExpense(testingAccountData.data as IAccount[])
+    expect(total).toBe(36529.68)
 })
 
 it("calcSales function works = calculate total sales", ()=>{
-    const totalRevenueInNumber = calcSales(testingAccountData.data as IAccount[])
-    expect(totalRevenueInNumber).toBe(36529.68)
+    const total = calcSales(testingAccountData.data as IAccount[])
+    expect(total).toBe(0)
 })
 
 it("calcAssets function works = calculate total assets", ()=>{
-    const totalRevenueInNumber = calcAssets(testingAccountData.data as IAccount[])
-    expect(totalRevenueInNumber).toBe(27646.58)
+    const total = calcAssets(testingAccountData.data as IAccount[])
+    expect(total).toBe(27646.58)
 })
 
 it("calcLiabilities function works = calculate total liabilities", ()=>{
-    const totalRevenueInNumber = calcLiabilities(testingAccountData.data as IAccount[])
-    expect(totalRevenueInNumber).toBe(19212.21)
+    const total = calcLiabilities(testingAccountData.data as IAccount[])
+    expect(total).toBe(19212.21)
 })
 
 

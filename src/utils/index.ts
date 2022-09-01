@@ -1,4 +1,4 @@
-import { IAccount, CalcType } from "src/type";
+import { IAccount } from "src/type";
 
 export const sumArrayNumber = (arr: number[]) => {
   return arr.reduce((a, b) => a + b, 0);
@@ -25,8 +25,8 @@ export const calcRevenue = (accountsData: IAccount[]) =>{
     return 0
   })
 
-  const totalRevenue = sumArrayNumber(numberArray);
-  return totalRevenue
+  const finalValue = sumArrayNumber(numberArray);
+  return finalValue
 }
 
 export const calcExpense = (accountsData: IAccount[]) =>{
@@ -39,8 +39,8 @@ export const calcExpense = (accountsData: IAccount[]) =>{
     return 0
   })
 
-  const totalRevenue = sumArrayNumber(numberArray);
-  return totalRevenue
+  const finalValue = sumArrayNumber(numberArray);
+  return finalValue
 }
 
 export const calcSales = (accountsData: IAccount[]) =>{
@@ -53,8 +53,8 @@ export const calcSales = (accountsData: IAccount[]) =>{
     return 0
   })
 
-  const totalRevenue = sumArrayNumber(numberArray);
-  return totalRevenue
+  const finalValue = sumArrayNumber(numberArray);
+  return finalValue
 }
 
 export const calcAssets = (accountsData: IAccount[]) =>{
@@ -75,8 +75,8 @@ export const calcAssets = (accountsData: IAccount[]) =>{
     return 0
   })
 
-  const totalValue = sumArrayNumber(baseNumberArray) - sumArrayNumber(subsNumberArray)
-  return totalValue
+  const finalValue = sumArrayNumber(baseNumberArray) - sumArrayNumber(subsNumberArray)
+  return finalValue
 }
 
 export const calcLiabilities = (accountsData: IAccount[]) =>{
@@ -97,6 +97,6 @@ export const calcLiabilities = (accountsData: IAccount[]) =>{
     return 0
   })
 
-  const totalValue = sumArrayNumber(baseNumberArray) - sumArrayNumber(subsNumberArray)
-  return totalValue
+  const finalValue = sumArrayNumber(baseNumberArray) - sumArrayNumber(subsNumberArray)
+  return finalValue
 }

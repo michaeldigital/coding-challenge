@@ -8,7 +8,9 @@ export const get = async(url:string):Promise<IAccount[]> =>{
         return response?.data?.data
     }
     catch(err){
-        console.log(err.message)
+        if (err instanceof Error) {
+            console.log(err.message)
+          }
         throw(err)
     }
 
