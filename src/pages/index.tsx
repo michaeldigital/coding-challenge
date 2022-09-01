@@ -67,7 +67,7 @@ export default function Home() {
       </Head>
 
       <Main>
-        <h1>Account calculator</h1>
+        <h1>Account Calculator</h1>
         <div>Please click the button below, and see the values after calcuation.</div>
         <Button onClick={handleClick} disabled={showTable}>Print values</Button>
 
@@ -86,6 +86,7 @@ export default function Home() {
     </PageContainer>
   );
 }
+
 
 const PageContainer = styled.div`
 width:40rem;

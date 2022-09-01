@@ -11,13 +11,15 @@ interface ITableValueProps {
   netProfitMargin: number;
   workingCapitalRatio: number;
 }
-const TableValue = ({
+
+
+export default function TableValue ({
   revenue,
   expense,
   grossProfitMargin,
   netProfitMargin,
   workingCapitalRatio,
-}: ITableValueProps) => {
+}: ITableValueProps) {
 
     // if value is 0, just render 0 without formatting
 
@@ -68,4 +70,3 @@ const TableValue = ({
   );
 };
 
-export default TableValue;
